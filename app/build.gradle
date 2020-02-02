@@ -28,7 +28,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "TMDB_API_KEY", "\"${getProperty("local.properties", "tmdb_api_key")}\""
+       // buildConfigField "String", "TMDB_API_KEY", "\"${getProperty("local.properties", "tmdb_api_key")}\""
+        buildConfigField 'String', 'API_DEVELOPER_MOVIES', TMDB_API_KEY
 
     }
     buildTypes {
@@ -43,9 +44,10 @@ android {
         enabled true
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
+
 }
 
 dependencies {
@@ -94,5 +96,5 @@ dependencies {
     kapt 'com.google.dagger:dagger-compiler:2.17'
 
     /* Add Kotlin support */
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.61"
 }

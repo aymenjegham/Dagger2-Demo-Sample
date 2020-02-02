@@ -13,7 +13,7 @@ class RequestInterceptor : Interceptor {
         val originalRequest = chain.request()
         val originalUrl = originalRequest.url()
         val url = originalUrl.newBuilder()
-            .addQueryParameter("api_key", BuildConfig.TMDB_API_KEY)
+            .addQueryParameter("api_key", BuildConfig.API_DEVELOPER_MOVIES)
             .build()
 
         val requestBuilder = originalRequest.newBuilder().url(url)
